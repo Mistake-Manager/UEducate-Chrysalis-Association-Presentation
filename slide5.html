@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+<title>UEducate Ecosystem Slide - Slide 4</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-container {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 40px 80px 20px 80px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+/* HEADER */
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.slide-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 12px;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.slide-subtitle {
+  font-size: 20px;
+  color: #64748b;
+  font-weight: 400;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.highlight-blue { color: #3b82f6; }
+
+/* GRID */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 30px;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+
+/* CARDS */
+.product-card {
+  width: 340px;
+  min-height: 180px;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+
+  /* 🔥 animation initial state */
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.5s ease;
+}
+
+.product-card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ICON */
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+/* TEXT */
+.card-title {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* COLORS */
+.card-green .card-icon-wrapper { 
+  background: rgba(5, 150, 105, 0.1); color: #059669; border-color: rgba(5, 150, 105, 0.2);
+}
+.card-purple .card-icon-wrapper { 
+  background: rgba(147, 51, 234, 0.1); color: #9333ea; border-color: rgba(147, 51, 234, 0.2);
+}
+.card-amber .card-icon-wrapper { 
+  background: rgba(217, 119, 6, 0.1); color: #d97706; border-color: rgba(217, 119, 6, 0.2);
+}
+.card-rose .card-icon-wrapper { 
+  background: rgba(190, 24, 93, 0.1); color: #be1864; border-color: rgba(190, 24, 93, 0.2);
+}
+
+/* SLIDE NUMBER */
+.slide-number {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+<div class="slide-container">
+
+  <div class="header-section">
+    <p class="slide-title">Complete Learning & <span class="highlight-blue">Management Solution</span></p>
+    <p class="slide-subtitle">A comprehensive ecosystem designed to transform educational delivery and administration.</p>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="product-card"><div class="card-icon-wrapper"><i class="fas fa-brain"></i></div><p class="card-title">KATBOOK</p><p class="card-desc">AI-powered learning platform delivering personalized educational experiences for every student.</p></div>
+
+    <div class="product-card card-green"><div class="card-icon-wrapper"><i class="fas fa-book-open"></i></div><p class="card-title">GreenBridge</p><p class="card-desc">Seamless integration of physical textbooks with digital content for hybrid learning.</p></div>
+
+    <div class="product-card card-purple"><div class="card-icon-wrapper"><i class="fas fa-school"></i></div><p class="card-title">KAMPUS</p><p class="card-desc">Comprehensive school management system handling admissions, fees, attendance, exam calendars.</p></div>
+
+    <div class="product-card card-rose"><div class="card-icon-wrapper"><i class="fas fa-shield-alt"></i></div><p class="card-title">KSMACC</p><p class="card-desc">Secure communication system ensuring privacy and safety.</p></div>
+
+    <div class="product-card card-amber"><div class="card-icon-wrapper"><i class="fas fa-chalkboard-teacher"></i></div><p class="card-title">UTeach & ULearn</p><p class="card-desc">Tools and resources for teaching enablement.</p></div>
+
+  </div>
+
+  <div class="slide-number">04 / 12</div>
+
+</div>
+
+<!-- 🔥 AUTO BLOOM SCRIPT -->
+<script>
+const cards = document.querySelectorAll(".product-card");
+
+cards.forEach((card, index) => {
+  setTimeout(() => {
+    card.classList.add("show");
+  }, index * 900); // delay between cards
+});
+</script>
+
+</body>
+</html>

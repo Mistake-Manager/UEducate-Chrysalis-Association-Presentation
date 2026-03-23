@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+<title>Revenue Calculation - Slide 7</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slide-container {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+/* HEADER */
+.slide-title {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 48px;
+  color: #1e293b;
+  margin-bottom: 80px;
+}
+
+.highlight-blue { color: #3b82f6; }
+
+/* FORMULA */
+.formula-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.input-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(226,232,240,0.8);
+  border-radius: 16px;
+  padding: 24px 32px;
+  min-width: 240px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* animation */
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.5s ease;
+}
+
+.operator, .equals-icon, .result-text {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.5s ease;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.input-value {
+  font-family: 'Poppins';
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.operator {
+  font-size: 42px;
+  color: #94a3b8;
+}
+
+.result-text {
+  font-family: 'Poppins';
+  font-size: 80px;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.trend-arrow {
+  font-size: 80px;
+  color: #16a34a;
+}
+
+/* BOTTOM */
+.subtext-pill {
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  border-radius: 50px;
+  padding: 12px 36px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.5s ease;
+}
+
+.subtext-content {
+  font-size: 18px;
+  color: #166534;
+}
+
+.subtext-icon {
+  color: #16a34a;
+}
+
+.equals-icon {
+  font-size: 30px;
+  color: #94a3b8;
+  margin: 20px 0;
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+<div class="slide-container">
+
+<div class="content-wrapper">
+
+<p class="slide-title">
+  <span class="highlight-blue">6,00,000 Students</span> Already in Your Network
+</p>
+
+<div class="formula-row">
+
+  <div class="input-card step">
+    <p class="input-value">6,00,000</p>
+    <p class="input-label"><i class="fas fa-users" style="color:#3b82f6;"></i> Students</p>
+  </div>
+
+  <div class="operator step"><i class="fas fa-xmark"></i></div>
+
+  <div class="input-card step">
+    <p class="input-value">₹1000</p>
+    <p class="input-label"><i class="fas fa-tag" style="color:#9333ea;"></i> Per Student</p>
+  </div>
+
+</div>
+
+<i class="fas fa-equals equals-icon step"></i>
+
+<p class="result-text step">
+  ₹60 Crores <i class="fas fa-arrow-trend-up trend-arrow"></i>
+</p>
+
+<div class="subtext-pill" id="bottomLine">
+  <i class="fas fa-circle-check subtext-icon"></i>
+  <p class="subtext-content">
+    No expansion required — based on your current reach
+  </p>
+</div>
+
+</div>
+
+<div class="slide-number">07 / 12</div>
+
+</div>
+
+<script>
+let step = 0;
+const steps = document.querySelectorAll(".step");
+const bottom = document.getElementById("bottomLine");
+
+document.addEventListener("click", () => {
+  if(step < steps.length){
+    steps[step].classList.add("show");
+
+    // when result appears
+    if(step === steps.length - 1){
+      setTimeout(() => {
+        bottom.classList.add("show");
+      }, 1000); // 1 sec delay
+    }
+
+    step++;
+  }
+});
+</script>
+
+</body>
+</html>

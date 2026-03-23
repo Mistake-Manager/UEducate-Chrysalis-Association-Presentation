@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720, initial-scale=1.0" name="viewport"/>
+<title>Closing CTA Slide</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slide-container {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.main-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #1e293b;
+}
+
+.highlight-blue {
+  color: #3b82f6;
+}
+
+/* Cards */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(226,232,240,0.8);
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  min-height: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.4s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Card colors */
+.card-blue { border-top: 6px solid #3b82f6; }
+.card-green { border-top: 6px solid #16a34a; }
+.card-gold { border-top: 6px solid #f59e0b; }
+
+.card-amount {
+  font-family: 'Poppins';
+  font-weight: 800;
+  font-size: 48px;
+  margin: 20px 0;
+  color: #1e293b;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #64748b;
+  text-transform: uppercase;
+font-weight: 400;
+}
+
+.gold-label {
+  font-weight: 800 !important;
+}
+
+.card-desc {
+  font-size: 14px;
+  text-align: center;
+  color: #334155;
+}
+
+/* Footer */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.closing-line {
+  font-size: 20px;
+  text-align: center;
+  color: #1e293b;
+}
+
+.cta-box {
+  border: 2px solid #22C55E;
+  padding: 16px 48px;
+  border-radius: 50px;
+  background: rgba(34,197,94,0.1);
+}
+
+.cta-text {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 24px;
+  color: #166534;
+}
+
+/* Slide number */
+.slide-number {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slide-container">
+
+  <div class="content-wrapper">
+
+    <div class="header">
+      <h1 class="main-title">
+        Unlocking <span class="highlight-blue">Immediate & Scalable</span> Revenue
+      </h1>
+    </div>
+
+    <div class="cards-container">
+
+      <div class="stat-card card-blue">
+        <p class="card-label gold-label" style="font-size:18px; font-weight:800; color:#1e293b;">
+  Immediate Opportunity
+</p>
+        <div class="card-amount">₹60 Cr</div>
+        <p class="card-desc">Revenue available right now within current network.</p>
+      </div>
+
+      <div class="stat-card card-green">
+        <p class="card-label gold-label" style="font-size:18px; font-weight:800; color:#1e293b;">
+  Direct-Share for Chrysalis
+</p>
+        <div class="card-amount">₹18 Cr</div>
+        <p class="card-desc">Zero investment required. Pure revenue addition.</p>
+      </div>
+
+      <div class="stat-card card-gold">
+       <p class="card-label gold-label" style="font-size:18px; font-weight:800; color:#1e293b;">
+  Long-Term Potential
+</p>
+        <div class="card-amount">₹360 Cr</div>
+        <p class="card-desc">Future scalability with Premium model adoption.</p>
+      </div>
+
+    </div>
+
+    <div class="footer-section">
+      <p class="closing-line">
+        This is not just a partnership — this is a revenue transformation opportunity.
+      </p>
+
+      <div class="cta-box">
+        <p class="cta-text">₹18 Crore. Your Network. No Investment.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-number">12 / 12</div>
+
+</div>
+
+</body>
+</html>

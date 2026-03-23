@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pilot Plan - Execution Strategy</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<style>
+/* BODY */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* SLIDE */
+.slide-container {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+/* CONTENT */
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b82f6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-family: 'Poppins';
+  font-size: 44px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* TIMELINE */
+.timeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* CARDS */
+.step-card {
+  width: 300px;
+  min-height: 340px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid rgba(226,232,240,0.8);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* COLORS */
+.step-1 { border-top: 4px solid #3b82f6; }
+.step-2 { border-top: 4px solid #16a34a; }
+.step-3 { border-top: 4px solid #f59e0b; }
+
+/* NUMBER */
+.step-number {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 60px;
+  opacity: 1;
+  font-family: 'Poppins';
+}
+
+/* ICON */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  transform: translateY(-10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.icon-1 { background: rgba(59,130,246,0.1); color:#3b82f6; }
+.icon-2 { background: rgba(22,163,52,0.1); color:#16a34a; }
+.icon-3 { background: rgba(245,158,11,0.1); color:#f59e0b; }
+
+/* TEXT */
+.step-title {
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: #334155;
+}
+
+/* ARROWS */
+.connector {
+  font-size: 20px;
+  color: #94a3b8;
+}
+
+/* FOOTER */
+.highlight-box {
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #22C55E;
+  background: rgba(34,197,94,0.1);
+  font-family: 'Poppins';
+  color: #166534;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slide-container">
+
+  <div class="content-wrapper">
+
+    <div class="header">
+      <div class="subtitle">Pilot Plan</div>
+      <div class="main-title">Execution Strategy</div>
+    </div>
+
+    <div class="timeline-container">
+
+      <div class="step-card step-1">
+        <div class="step-number">01</div>
+        <div class="icon-wrapper icon-1"><i class="fas fa-rocket"></i></div>
+        <div class="step-title">Initial Launch</div>
+        <div class="step-desc">Start with 50–100 Schools to establish baseline metrics</div>
+      </div>
+
+      <div class="connector"><i class="fas fa-chevron-right"></i></div>
+
+      <div class="step-card step-2">
+        <div class="step-number">02</div>
+        <div class="icon-wrapper icon-2"><i class="fas fa-check-circle"></i></div>
+        <div class="step-title">Validate Results</div>
+        <div class="step-desc">Measure learning outcomes and gather feedback</div>
+      </div>
+
+      <div class="connector"><i class="fas fa-chevron-right"></i></div>
+
+      <div class="step-card step-3">
+        <div class="step-number">03</div>
+        <div class="icon-wrapper icon-3"><i class="fas fa-chart-line"></i></div>
+        <div class="step-title">Scale Up</div>
+        <div class="step-desc">Expand to full network of 2000 schools</div>
+      </div>
+
+    </div>
+
+    <div class="highlight-box">
+      Fast rollout with measurable results
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

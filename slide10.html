@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280, height=720">
+<title>Revenue Split</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+<style>
+body {
+  margin:0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family:'Inter', sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:#1e293b;
+}
+
+.slide {
+  width:1280px;
+  height:720px;
+  position:relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.content {
+  height:100%;
+  padding:60px 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* HEADER */
+.title {
+  text-align:center;
+  font-family:'Poppins';
+  font-size:34px;
+  color:#64748b;
+}
+
+.amount {
+  text-align:center;
+  font-family:'Poppins';
+  font-size:52px;
+  font-weight:800;
+  color:#1e293b;
+}
+
+/* MAIN GRID */
+.grid {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+}
+
+/* CARDS */
+.card {
+  width:300px;
+  padding:30px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.9);
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  border:1px solid rgba(226,232,240,0.8);
+}
+
+/* LOGOS */
+.card img {
+  height:90px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 15px;
+}
+
+/* UEducate fix */
+.ueducate-img {
+  height:80px;
+  transform:scale(1.2);
+}
+
+/* COLORS */
+.green { color:#16a34a; }
+.blue { color:#3b82f6; }
+
+/* CHART */
+.chart-box {
+  width:420px;
+  height:420px;
+  position:relative;
+}
+
+#chart {
+  width:100%;
+  height:100%;
+}
+
+/* CENTER TEXT */
+.center-text {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+}
+
+.center-text h2 {
+  font-family:'Poppins';
+  font-size:28px;
+  margin:0;
+}
+
+.center-text p {
+  font-size:14px;
+  color:#64748b;
+}
+
+/* FOOTER CENTER FIX */
+.footer {
+  margin: 20px auto 0;
+  background:rgba(59,130,246,0.08);
+  padding:15px 30px;
+  border-left:4px solid #3b82f6;
+  border-radius:8px;
+  color:#3b82f6;
+  font-weight:600;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slide">
+
+<div class="content">
+
+<!-- HEADER -->
+<div>
+  <div class="title">Revenue Split</div>
+  <div class="amount">₹60 CRORE</div>
+</div>
+
+<!-- MAIN -->
+<div class="grid">
+
+  <!-- LEFT -->
+  <div class="card">
+    <img src="images/Chrysalis-logo.jpeg">
+    <h2>Chrysalis</h2>
+    <p class="green text-3xl font-bold">₹18 Cr</p>
+    <p>30%</p>
+  </div>
+
+  <!-- CHART -->
+  <div class="chart-box">
+    <div id="chart"></div>
+
+    <div id="centerText" class="center-text">
+      <h2>₹60 Cr</h2>
+      <p>Total Revenue</p>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="card">
+    <img src="images/UEducate-logo.png" class="ueducate-img">
+    <h2>UEducate</h2>
+    <p class="blue text-3xl font-bold">₹42 Cr</p>
+    <p>70%</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  ₹18 Crore comes without any tech investment
+</div>
+
+</div>
+</div>
+
+<script>
+var chart = echarts.init(document.getElementById('chart'));
+
+chart.setOption({
+  tooltip: { show:false },
+  series: [{
+    type:'pie',
+    radius:['60%','85%'],
+    label:{ show:false },
+    data:[
+      {value:30, name:'Chrysalis', itemStyle:{color:'#16a34a'}},
+      {value:70, name:'UEducate', itemStyle:{color:'#3b82f6'}}
+    ]
+  }]
+});
+
+chart.on('mouseover', function (params) {
+  if(params.name === 'Chrysalis'){
+    document.getElementById('centerText').innerHTML =
+      '<h2 style="color:#16a34a;">Chrysalis</h2><p>30% • ₹18 Cr</p>';
+  }
+
+  if(params.name === 'UEducate'){
+    document.getElementById('centerText').innerHTML =
+      '<h2 style="color:#3b82f6;">UEducate</h2><p>70% • ₹42 Cr</p>';
+  }
+});
+
+chart.on('globalout', function () {
+  document.getElementById('centerText').innerHTML =
+    '<h2>₹60 Cr</h2><p>Total Revenue</p>';
+});
+</script>
+
+</body>
+</html>

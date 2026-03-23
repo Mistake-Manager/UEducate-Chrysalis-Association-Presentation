@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Business Model - Pricing Tiers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* RESET & BOX SIZING */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* remove scroll */
+  padding: 20px;
+}
+
+/* PRICING BLOCK */
+.pricing-block {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 48px 40px;
+  border-radius: 16px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.pricing-subtitle {
+  font-weight: 600;
+  font-size: 14px;
+  color: #3b82f6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+.pricing-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #1e293b;
+  display: block;
+  line-height: 1.2;
+}
+
+/* CARDS */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.pricing-card {
+  position: relative;
+  width: 280px;
+  min-height: 380px;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  color: #1e293b;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+.pricing-plan-name {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+  display: block;
+}
+.pricing-price-wrap {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.pricing-amount {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  display: block;
+  line-height: 1.1;
+}
+.pricing-period {
+  font-size: 13px;
+  color: #64748b;
+  display: block;
+  margin-top: 4px;
+}
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  width: 100%;
+}
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.4;
+}
+.pricing-features svg {
+  flex-shrink: 0;
+}
+
+/* HIGHLIGHT BAR */
+.pricing-highlight {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 12px;
+  padding: 16px 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.pricing-highlight svg {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+.pricing-highlight-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .pricing-card {
+    width: 100%;
+    max-width: 340px;
+  }
+  .pricing-title {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="pricing-block">
+
+  <!-- Header -->
+  <div class="pricing-header">
+    <span class="pricing-subtitle">Business Model</span>
+    <span class="pricing-title">Simple &amp; Scalable Pricing</span>
+  </div>
+
+  <!-- Cards -->
+  <div class="pricing-cards">
+
+    <!-- Basic -->
+    <div class="pricing-card">
+      <span class="pricing-plan-name" style="color: #3b82f6;">Basic</span>
+      <div class="pricing-price-wrap">
+        <span class="pricing-amount" style="color: #3b82f6;">₹1000</span>
+        <span class="pricing-period">per student / month</span>
+      </div>
+      <ul class="pricing-features">
+        <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Notes</span>
+        </li>
+        <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Highlights</span>
+        </li>
+        <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Bookmarks</span>
+        </li>
+        <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Hyperlinks</span>
+        </li>
+         <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Built-in Dictionary</span>
+        </li>
+        <li>
+          <svg style="color: #3b82f6;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Translator</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Standard -->
+    <div class="pricing-card">
+      <span class="pricing-plan-name" style="color: #9333ea;">Standard</span>
+      <div class="pricing-price-wrap">
+        <span class="pricing-amount" style="color: #9333ea;">₹2,000</span>
+        <span class="pricing-period">per student / month</span>
+      </div>
+      <ul class="pricing-features">
+        <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>All Basic Features</span>
+        </li>
+        <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>2D Concept Videos</span>
+        </li>
+        <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>3D Concept Videos</span>
+        </li>
+        <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Keywords with explanation</span>
+        </li>
+        <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Ice breaker Activity</span>
+        </li>
+ <li>
+          <svg style="color: #9333ea;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Generative AI</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Premium -->
+    <div class="pricing-card">
+      <span class="pricing-badge" style="background: #f59e0b;">Most Complete</span>
+      <span class="pricing-plan-name" style="color: #f59e0b;">Premium</span>
+      <div class="pricing-price-wrap">
+        <span class="pricing-amount" style="color: #f59e0b;">₹6,000</span>
+        <span class="pricing-period">per student / month</span>
+      </div>
+      <ul class="pricing-features">
+<li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>All Standard Features</span>
+        </li>
+        <li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>3D Models</span>
+        </li>
+        <li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>AR/VR Labs</span>
+        </li>
+        <li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Advanced AI Search</span>
+        </li>
+        <li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Multi-Search</span>
+        </li>
+        <li>
+          <svg style="color: #f59e0b;" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Interactive Activities</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Highlight Bar -->
+  <div class="pricing-highlight">
+    <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+    </svg>
+    <span class="pricing-highlight-text">Flexible pricing enables large-scale adoption</span>
+  </div>
+
+</div>
+
+<!-- Entrance animation script -->
+<script>
+(function () {
+  'use strict';
+  var cards = document.querySelectorAll('.pricing-card');
+  cards.forEach(function (card, index) {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    card.style.transitionDelay = index * 150 + 'ms';
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var blockCards = entry.target.querySelectorAll('.pricing-card');
+        blockCards.forEach(function (card) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(document.querySelector('.pricing-block'));
+})();
+</script>
+
+</body>
+</html>
